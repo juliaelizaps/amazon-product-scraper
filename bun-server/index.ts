@@ -6,11 +6,10 @@ import { scrapeAmazon } from "./scrape-amazon";
 const app = express();
 const port = 8080;
 
-// GET route at /api/scrape (Ex.request:GET http://localhost:8080/api/scrape?keyword=dress)
 app.get("/api/scrape", async (req: Request, res: Response) => {
     const keyword = req.query.keyword as string;
-    await scrapeAmazon(keyword);
-    res.json({keyword});
+    const response = await scrapeAmazon(keyword);
+    res.json(response);
 });
 
 // Starting the server
