@@ -14,7 +14,6 @@ app.get("/api/scrape", async (req: Request, res: Response) => {
     try {
         const response = await scrapeAmazon(keyword);
     res.json(response || []);
-    console.log ("problema:",response)
     } catch (error) {
         res.status(500).json({error:'Failed to scrape Amazon.com'})
     }
