@@ -2,14 +2,22 @@
 import express from "express";
 import type { Request, Response } from "express";
 import { scrapeAmazon } from "./scrape-amazon";
+// @ts-ignore
+import cors from "cors";
 
 const app = express();
 const port = 8080;
+app.use(cors());
 
 app.get("/api/scrape", async (req: Request, res: Response) => {
     const keyword = req.query.keyword as string;
-    const response = await scrapeAmazon(keyword);
-    res.json(response);
+    try {
+        const response = await scrapeAmazon(keyword);
+    res.json(response || []);
+    console.log ("problema:",response)
+    } catch (error) {
+        res.status(500).json({error:'Failed to scrape Amazon.com'})
+    }
 });
 
 // Starting the server
