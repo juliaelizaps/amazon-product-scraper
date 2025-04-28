@@ -1,8 +1,6 @@
-// @ts-ignore
 import express from "express";
 import type { Request, Response } from "express";
 import { scrapeAmazon } from "./scrape-amazon";
-// @ts-ignore
 import cors from "cors";
 
 const app = express();
@@ -11,6 +9,7 @@ app.use(cors());
 
 app.get("/api/scrape", async (req: Request, res: Response) => {
     const keyword = req.query.keyword as string;
+    //verificar se é string
     try {
         const response = await scrapeAmazon(keyword);
     res.json(response || []);

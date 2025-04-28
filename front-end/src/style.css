@@ -4,7 +4,7 @@
   font-weight: 400;
 
   color-scheme: normal;
-  color: rgba(143, 10, 132, 0.87);
+  color: rgba(0, 0, 0, 0.87);
   background-color: #f5f4f4de;
 
   font-synthesis: none;
@@ -22,6 +22,7 @@ h2 {
   text-align: center;
   font-size: 24px;
 }
+
 
 .label-container{
   display: flex;
@@ -46,7 +47,7 @@ button {
   align-items: end;
   border-radius: 12px;
   border: 1px solid transparent;
-  padding: 0.5em 1.2em;
+  padding: 8px 18px;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
@@ -63,6 +64,42 @@ button:hover {
 }
 
 button:disabled{
-  background-color: red;
+  background-color: rgb(105, 38, 38);
   cursor: not-allowed;
+}
+
+img{
+  background-color:white;
+  border-radius: 10px 10px 0px 0px;
+}
+
+#results{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 50px;
+  gap: 6px;
+}
+
+.product-container{
+  width: 200px;
+  border-radius: 10px;
+  overflow-wrap: break-word;
+  
+  background-color: #c5bebe56;
+  img{
+    width: 100%;
+    height: 250px;
+    object-fit: contain
+  }
+  h2{
+    font-size: 16px;
+    text-align: left;
+  }
+
+  p{
+    font-size: 16px;
+    margin: 2px;
+    font-weight: 600;
+    color: #3e3f41;
+  }
 }

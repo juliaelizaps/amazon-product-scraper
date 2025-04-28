@@ -30,7 +30,7 @@ export async function scrapeAmazon(keyword: string) {
             const title = product?.querySelector('a > h2 > span')?.textContent;
             const rating = product?.querySelector('div[data-cy="reviews-block"] > div > span')?.textContent?.split(' ')[0];
             const reviews = product?.querySelector('span[data-component-type="s-client-side-analytics"] > div > a')?.textContent?.trim().replace(',', ' ');
-            const imageUrl = product?.querySelector('img.s-image');
+            const imageUrl = product?.querySelector('div > img.s-image')?.getAttribute('src');
             return { title, rating: Number(rating), reviews: Number(reviews), imageUrl };
         })
 
