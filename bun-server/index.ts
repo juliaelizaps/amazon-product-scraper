@@ -12,7 +12,7 @@ app.get("/api/scrape", async (req: Request, res: Response) => {
     //verificar se é string
     try {
         const response = await scrapeAmazon(keyword);
-    res.json(response || []);
+    res.json(response); //retornar um erro 
     } catch (error) {
         res.status(500).json({error:'Failed to scrape Amazon.com'})
     }

@@ -18,11 +18,6 @@ async function getData() {
         }
 
         const products = await response.json();
-        
-        // const images = document.createElement('img');
-        // images.src = products[0].imageUrl;
-        // document.getElementById('results').appendChild(images);
-         
 
         function createElements(elementArray){
             elementArray.forEach(item => {
