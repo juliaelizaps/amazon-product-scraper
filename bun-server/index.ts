@@ -8,14 +8,25 @@ const port = 8080;
 app.use(cors());
 
 app.get("/api/scrape", async (req: Request, res: Response) => {
-    const keyword = req.query.keyword as string;
-    //verificar se é string
+    const keyword = req.query.keyword;
+    //Returns an Error if not a string
+    if (typeof keyword !== 'string') {
+        console.log("Keyword is not a String")
+        return res.status(400).json({ erro: 'Keyword must be a string' })
+    }
     try {
         const response = await scrapeAmazon(keyword);
-    res.json(response); //retornar um erro 
+
+        //Returns an Error if no data from amazon
+        if (!response || response?.length === 0) {
+            throw new Error(`Error getting data from Amazon: ${Error}`);
+        }
+        return res.json(response);
+
     } catch (error) {
-        res.status(500).json({error:'Failed to scrape Amazon.com'})
+        res.status(500).json({ error: 'Failed to scrape Amazon.com' })
     }
+
 });
 
 // Starting the server
