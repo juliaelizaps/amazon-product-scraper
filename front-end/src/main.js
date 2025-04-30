@@ -30,9 +30,9 @@ async function getData() {
                 const titleElement = document.createElement('h2');
                 titleElement.textContent= item.title;
                 const ratingElement = document.createElement('p');
-                ratingElement.textContent = 'Rating: ' + item.rating;
+                ratingElement.textContent = 'Rating: ' + (item.rating ?? 'N/A');
                 const reviewsElement = document.createElement('p');
-                reviewsElement.textContent = 'Reviews: ' + item.reviews;
+                reviewsElement.textContent = 'Reviews: ' + (item.reviews ?? 'N/A');
 
                 const card = document.createElement('div');
                 //Append elements to the product card
@@ -50,7 +50,7 @@ async function getData() {
         createElements(products);
 
     } catch (error) {
-
+        
         console.error(error.message);
 
     } finally {
