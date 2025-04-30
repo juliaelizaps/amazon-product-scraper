@@ -30,6 +30,9 @@ export async function scrapeAmazon(keyword: string) {
             }
         });
         const html = response.data;
+        if (!html.includes("data-component-type=\"s-search-result\"")) {
+            throw new Error("Blocked by Amazon or invalid response");
+          }          
         const dom = new JSDOM(html);
 
         const products = dom.window.document.querySelectorAll("span[data-component-type='s-search-results'] > div > div[id]");
