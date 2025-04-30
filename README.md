@@ -7,11 +7,15 @@ A simple fullstack project that scrapes Amazon product listings from the first p
 - Bun + Express + Axios + JSDOM (Backend)
 - Vite + HTML + CSS + JavaScript (Frontend)
 
-## 🚀 How to Run
+## Preview
+
+![App Preview](./assets/ui-preview.png)
+
+# 🚀 How to Run
 
 ### Backend
 
-# Bun server
+## 🥟 Bun server
 bun-server/
 
 To install dependencies:
@@ -31,7 +35,7 @@ The backend will be available at:
 http://localhost:8080
 
 
-### Frontend  
+## 📺 Frontend  
 front-end/
 
 To install dependencies:
@@ -42,9 +46,9 @@ npm install
 Vite will start a development server, usually available at:
 
  http://localhost:5173
+ 
 
-🧪 How It Works:
-
+# 🔎 How It Works:
 The user enters a keyword into an input field on the frontend.
 
 When clicking "Search," the frontend sends a request to the backend API at /api/scrape?keyword=yourKeyword.
@@ -65,7 +69,7 @@ The backend returns this data as JSON.
 
 The frontend dynamically creates and displays product cards for each result.
 
-📚 Features:
+## 📚 Features:
 
 Fullstack architecture (frontend + backend working together)
 
@@ -77,7 +81,7 @@ Basic layout and styling with HTML and CSS
 
 CORS enabled for development
 
-📦 Project Structure:
+## 📦 Project Structure:
 The structure is as follows:
 
 ```bash
