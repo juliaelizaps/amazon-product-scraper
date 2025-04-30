@@ -1,11 +1,14 @@
-
+//select search button and asigns getData function on its click
 const searchButton = document.getElementById('search-button')
 searchButton.onclick = getData
+//selects the container where the product cards will be displayed
 const resultsContainer = document.getElementById('results')
 
 async function getData() {
     console.log(resultsContainer.innerHTML);
+    //clears previous search results
     resultsContainer.innerHTML = '';
+    //disables the search button to prevent multiple requests
     searchButton.disabled = true;
     
     try {
@@ -32,13 +35,14 @@ async function getData() {
                 reviewsElement.textContent = 'Reviews: ' + item.reviews;
 
                 const card = document.createElement('div');
+                //Append elements to the product card
                 card.appendChild(imageElement);
                 card.appendChild(titleElement);
                 card.appendChild(ratingElement);
                 card.appendChild(reviewsElement);
 
                 resultsContainer.appendChild(card);
-
+                //applies a css class
                 card.classList.add('product-container')
             });
         }
@@ -50,6 +54,7 @@ async function getData() {
         console.error(error.message);
 
     } finally {
+        //re-enables button after request is finished
         searchButton.disabled = false;
     }
 }
