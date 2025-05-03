@@ -50,7 +50,7 @@ async function getData() {
         createElements(products);
 
     } catch (error) {
-        
+        alert('Something went wrong, please try again later!');
         console.error(error.message);
 
     } finally {
