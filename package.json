@@ -1,0 +1,35 @@
+{
+  "name": "trainee_test",
+  "version": "1.0.0",
+  "description": "A simple fullstack project that scrapes Amazon product listings from the first page of search results based on a keyword.",
+  "main": "index.js",
+  "private": true,
+  "workspaces": [
+    "bun-server",
+    "front-end"
+  ],
+"scripts": {
+  "install:root": "npm install",
+  "install:frontend": "cd front-end && npm install",
+  "install:backend": "cd bun-server && bun install",
+  "install:all": "npm run install:root && npm run install:frontend && npm run install:backend",
+
+  "dev:frontend": "cd front-end && npm run dev",
+  "dev:backend": "cd bun-server && bun start",
+  "dev": "concurrently -n FRONTEND,BACKEND -c green,blue \"npm run dev:frontend\" \"npm run dev:backend\""
+},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juliaelizaps/amazon-product-scraper.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/juliaelizaps/amazon-product-scraper/issues"
+  },
+  "homepage": "https://github.com/juliaelizaps/amazon-product-scraper#readme",
+  "devDependencies": {
+    "concurrently": "^8.0.1"
+  }
+}

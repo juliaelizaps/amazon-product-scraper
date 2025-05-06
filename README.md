@@ -11,38 +11,27 @@ A simple fullstack project that scrapes Amazon product listings from the first p
 
 ![App Preview](./assets/ui-preview.png)
 
-# 🚀 How to Run
-
-### Backend
+### Backend 📺 Frontend  
 
 ## 🥟 Bun server
-bun-server/
+bun-server/ front-end/
 
-To install dependencies:
+# 🚀 How to install
+To install front and server:
 
+open terminal and run:
 ```bash
-bun install
+npm run install:all
 ```
-
-To run:
-
+# 🚀 How to Run
 ```bash
-bun start
+npm run dev
 ```
 
 The backend will be available at:
 
 http://localhost:8080
 
-
-## 📺 Frontend  
-front-end/
-
-To install dependencies:
-
-```bash
-npm install
-```
 Vite will start a development server, usually available at:
 
  http://localhost:5173
