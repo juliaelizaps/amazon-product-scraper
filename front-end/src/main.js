@@ -50,7 +50,7 @@ async function getData() {
         createElements(products);
 
     } catch (error) {
-        alert('Something went wrong, please try again later!');
+        showMessage('Unfortunately, Amazon has blocked the automated query. Please try again later or change the search.');
         console.error(error.message);
 
     } finally {

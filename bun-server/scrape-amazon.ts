@@ -37,7 +37,7 @@ export async function scrapeAmazon(keyword: string) {
 
         const products = dom.window.document.querySelectorAll("span[data-component-type='s-search-results'] > div > div[id]");
 
-        const outputData = products.values().toArray().map((product) => {
+        const outputData = Array.from(products).map((product) => {
             const title = product?.querySelector('a > h2 > span')?.textContent;
             const rating = product?.querySelector('div[data-cy="reviews-block"] > div > span')?.textContent?.split(' ')[0];
             const reviews = product?.querySelector('span[data-component-type="s-client-side-analytics"] > div > a')?.textContent?.trim().replace(',', ' ');
