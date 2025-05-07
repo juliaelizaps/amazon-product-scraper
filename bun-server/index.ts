@@ -19,7 +19,7 @@ app.get("/api/scrape", async (req: Request, res: Response) => {
 
         //Returns an Error if no data from amazon
         if (!response || response?.length === 0) {
-            throw new Error(`Error getting data from Amazon`);
+            return res.json([]); 
         }
         return res.json(response);
 

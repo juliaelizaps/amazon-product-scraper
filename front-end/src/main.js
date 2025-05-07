@@ -1,3 +1,4 @@
+
 //select search button and asigns getData function on its click
 const searchButton = document.getElementById('search-button')
 searchButton.onclick = getData
